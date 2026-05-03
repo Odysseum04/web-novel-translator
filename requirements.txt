@@ -1,0 +1,21 @@
+# requirements.txt — web-novel-translator dependencies
+# Install with: pip install -r requirements.txt
+
+# OpenAI Python SDK
+openai>=1.75.0
+
+# Accurate token counting for OpenAI models
+tiktoken>=0.9.0
+
+# EPUB reading and writing
+ebooklib>=0.18
+
+# HTML parsing and manipulation
+beautifulsoup4>=4.13.0
+lxml>=5.3.0
+
+# Progress bars
+tqdm>=4.67.0
+
+# YAML configuration file support
+PyYAML>=6.0.2

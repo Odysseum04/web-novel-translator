@@ -1,0 +1,32 @@
+# config.yaml — web-novel-translator configuration
+# All fields are optional; omitted keys use the built-in defaults.
+
+openai:
+  # API key fallback — prefer setting the OPENAI_API_KEY environment variable instead.
+  # api_key: "sk-..."
+
+  model: "gpt-5.4-mini"
+
+  # Creativity level: 0.0 = very literal, 1.0 = very free.
+  # 0.3–0.5 is the sweet spot for web novel translation.
+  temperature: 0.4
+
+  # Maximum tokens sent to the model per chunk.
+  # gpt-5.4-mini has a large context window — 32000 is safe and reduces API calls.
+  max_tokens_per_chunk: 32000
+
+  # Seconds to wait for an API response before timing out.
+  request_timeout: 300
+
+translation:
+  # Number of retry attempts on transient API errors.
+  retries: 3
+
+  # Base delay in seconds between retries (multiplied by attempt number).
+  # Attempt 1 → 10s, attempt 2 → 20s, attempt 3 → 30s.
+  retry_base_delay: 10
+
+logging:
+  # Log verbosity: DEBUG | INFO | WARNING | ERROR
+  level: "INFO"
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
